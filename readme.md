@@ -7,17 +7,89 @@ The [last time](https://github.com/aulambda/haskellbook/commits?author=aulambda)
 
 
 ## 1 Lambda Calculus
-Functional Programming
+* Functional Programming
   : Programming focused on the combination of expressions, particularly functions. Expressions can be values, variable, or functions.
-Functions
-  : Expressions that are applied to an argument or input and evaluated to return a result. The result isn't an action that the funtion does, but rather the true value of the function, the process of moving from a stated function to the final expression that expresses the value of the function is called *reduction* or *evaluation*
-Purity
+* Functions
+  : Expressions that are applied to an argument or input and evaluated to return a result. The result isn't an action that the function does, but rather the true value of the function, the process of moving from a stated function to the final expression that expresses the value of the function is called *reduction* or *evaluation* A function is a relation between a set of possible inputs and possible outputs.
+* Purity
   : Referential transparency. A pure function, given the same values, will always return the same result, no concept of *state*.
+
+* Alpha equivalence
+  : The sense in which functions represented with different variable that still perform the same action are actually the same function.
+  * Examples of equivalent functions:
+
+    ```
+    λx.x
+    λy.y
+    λq.q
+    ```
+* Beta reduction
+  : Evaluating a function with an argument by substituting the argument for any bound variables in the function declaraction.
+  * Examples:
+    ```
+    (λx.x)2
+    -> 2
+
+    (λx.x + 4)4
+    -> 4
+
+    (λx.x + 4)27
+    -> 31
+
+    (λx.x)(λy.y)z
+    ```
+* Functions that require multiple arguments have multiple, nested heads.
+  * Examples:
+  ```
+  λx.(λy.xy) = λxy.xy
+
+  λxy.xy
+  -> (λxy.xy)1 2
+  -> (λx(λy.xy))1 2
+  -> (λ[x := 1].(λx.xy))2
+  -> (λy.1y) 2
+  -> (λ [y := 2].1y)2
+  -> 1 2
+  ```
+
+
 
 
 ## 2 Hello Haskell
+### Arithmetic
+* + : Addition
+* - : Subtraction
+* * : Multiplication
+* / : Fractional Division
+* div : Integer division, rounded down
+* rem : Remainder after Division
+* quot : Integral division, rounded towards zero
+* mod : N
+
 ## 3 Strings
+### List Operations
+* : : cons, adds to the front of a list
+* head list : returns the first item of a list
+* tail list : returns the list with the first item chopped off
+* take x list : returns x number of elements from list
+* drop x list : chops x number of elements off list and returns remainder
+* (++) list1 list2 : merges two lists
+* (!!) list x : returns the element of list at *index* x
+* concat [list1, list2] : merges list1 and list2
+
 ## 4 Basic Datatypes
+* Type Constructors : Names of a type, capitalized, express a set of values.
+* Data Constructors : The possible values of a type
+  *
+  ```haskell
+  -- a type constructor followed by two data constructors
+  data Bool = False | True
+
+  -- examples of how constructors are used in type and term level code
+  input :: Bool -> Bool
+  input True = False
+  input False = True
+  ```
 ## 5 Types
 ## 6 Typeclasses
 ## 7 Functions
