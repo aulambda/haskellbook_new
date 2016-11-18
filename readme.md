@@ -91,6 +91,7 @@ The [last time](https://github.com/aulambda/haskellbook/commits?author=aulambda)
   input False = True
   ```
 ## 5 Types
+
 ## 6 Typeclasses
 ## 7 Functions
 ## 8 Recursion

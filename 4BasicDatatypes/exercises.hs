@@ -5,7 +5,7 @@ isPalindrome x = x == y
   where
     y = reverse x
 
-myAbs :: Integer -> Integer
+myAbs  :: Integer -> Integer
 myAbs num =
   if num >= 0
     then num
@@ -24,3 +24,4 @@ identity i = i
 return1 (z : zs) = z
 
 myFst (a, b) = a
+
