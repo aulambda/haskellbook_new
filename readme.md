@@ -91,6 +91,12 @@ The [last time](https://github.com/aulambda/haskellbook/commits?author=aulambda)
   input False = True
   ```
 ## 5 Types
+* Sectioning : partialliy applying infix operators, such as in these examples:
+  ```haskell
+  let y = (2^)
+  let x = (^2)
+  let celebrate = (++ " woot!")
+  ```
 
 ## 6 Typeclasses
 ## 7 Functions
